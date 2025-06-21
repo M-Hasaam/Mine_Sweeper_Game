@@ -1,0 +1,36 @@
+Requirements For Compiling (Only need to be run once):
+
+	1) Install GNU G++ Compiler:
+	sudo apt-get install g++
+
+	2) Install SFML:
+	sudo apt-get install libsfml-dev
+
+Compilation Commands (In Order):
+	
+	1) g++ -c buzz.cpp
+	2) g++ buzz.o -o sfml-app -lsfml-graphics -lsfml-audio -lsfml-window -lsfml-system
+
+Running The Game:
+	
+	3) ./sfml-app
+
+
+only 1) g++ -c buzz.cpp; g++ buzz.o -o sfml-app -lsfml-graphics -lsfml-audio -lsfml-window -lsfml-system; ./sfml-app
+
+other way) g++ main.cpp -o output_exe -lsfml-graphics -lsfml-audio -lsfml-window -lsfml-system;./output_exe
+
+
+ffmpeg -i music.ogg -c:a libvorbis output.ogg
+
+ffmpeg -i music.ogg -c:a libvorbis output.ogg; rm music.ogg; rename output.ogg music.ogg
+
+
+->For setting .ogg files
+
+1) cd Music
+
+2) for file in *.ogg; do ffmpeg -i "$file" -c:a libvorbis "output_${file}"; rm "$file"; mv "output_${file}" "$file"; done
+
+3) cd ..
+
